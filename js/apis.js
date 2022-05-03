@@ -6,13 +6,19 @@ fetch ("https://newsdata.io/api/1/news?apikey=pub_7014cffa8aab19d57149825860b37f
     const data = await resp.json()
 
     data.results.forEach ((post) => {
-        const span = document.createElement ("span")
-        span.innerHTML += `
-            <h4> ${post.title} </h4>
-            <p> ${post.description}</p>
+        const div = document.createElement ("div")
+        div.innerHTML += `
+            <div class="card w-100">
+                <div class="card-body">
+                    <h5 class="card-title">${post.title}</h5>
+                    <p class="card-text">${post.description}</p>
+                    <a href="${post.link}" class="btn btn-primary">Ver más ...</a>
+                </div>
+            </div>
+            <p> </p>
         `
 
-        noticias.append(span)
+        noticias.append(div)
     })
 }
 sumarPost();

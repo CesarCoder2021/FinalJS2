@@ -157,14 +157,16 @@ textarea {
   height: 50vh;
 }
 
-#noticias {
-  width: 100%;
-  height: 50vh;
+.bodyNoticias {
   display: flex;
-  flex-direction: column;
   justify-content: space-around;
-}
+  flex-direction: column;
+  align-items: center;
+  }
 
-span {
-  padding: 1.5rem;
+#noticias {
+  width: 70%;
+}
+.saber {
+  margin-top: 1rem;
 }
