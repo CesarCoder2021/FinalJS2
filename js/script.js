@@ -1,18 +1,17 @@
 
 class Turno {
-    constructor (id, fecha, horario, precio) {
+    constructor (id, fecha, horario) {
         this.id = id;
         this.fecha = fecha;
         this.horario = horario;
-        this.precio = precio;
     }
 }
 
 // Turnos disponibles
-const turnoDisponible1 = new Turno (1, "10/01/2022", "10:00 hs", 1000);
-const turnoDisponible2 = new Turno (2, "15/01/2022", "09:30 hs", 2000);
-const turnoDisponible3 = new Turno (3, "16/01/2022", "10:30 hs", 1500);
-const turnoDisponible4 = new Turno (4, "18/01/2022", "11:30 hs", 1500);
+const turnoDisponible1 = new Turno (1, "23/05/2022", "10:00 hs");
+const turnoDisponible2 = new Turno (2, "24/05/2022", "09:30 hs");
+const turnoDisponible3 = new Turno (3, "24/05/2022", "10:30 hs");
+const turnoDisponible4 = new Turno (4, "26/05/2022", "11:30 hs");
 
 // Creación del array de turnos.
 let turnosContac = [turnoDisponible1, turnoDisponible2, turnoDisponible3, turnoDisponible4];

@@ -1,0 +1,33 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+    text-decoration-color: currentColor;
+  }
+
+  body {
+    width: 100%;
+    height: 100vh;
+    background-image: url(/img/Fondo_Marce_duotone.jpg);
+    background-repeat:repeat-y;
+    background-size: auto;
+    background-position: center;
+  }
+
+  .marce1 {
+      width: 100%;
+      height: 50vh;
+      display: flex;
+      flex-direction: row;
+      padding: 2rem;
+      justify-content: space-around;
+  }
+
+  .textos {
+      font-size: 20px;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      padding-left: 2rem;
+      width: 70%;
+  }
+
