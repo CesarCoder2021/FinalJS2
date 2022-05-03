@@ -5,7 +5,7 @@ fetch ("https://newsdata.io/api/1/news?apikey=pub_7014cffa8aab19d57149825860b37f
 
     const data = await resp.json()
 
-    data.results.forEach ((post) => {
+     data.results.forEach ((post) => {
         const div = document.createElement ("div")
         div.innerHTML += `
             <div class="card w-100">

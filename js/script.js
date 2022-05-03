@@ -14,12 +14,12 @@ const turnoDisponible2 = new Turno (2, "15/01/2022", "09:30 hs", 2000);
 const turnoDisponible3 = new Turno (3, "16/01/2022", "10:30 hs", 1500);
 const turnoDisponible4 = new Turno (4, "18/01/2022", "11:30 hs", 1500);
 
-// Creación del array de turnos y guardado en el localStorage
+// Creación del array de turnos.
 let turnosContac = [turnoDisponible1, turnoDisponible2, turnoDisponible3, turnoDisponible4];
-localStorage.setItem ("arrayDeTurnos", JSON.stringify ("turnosContac"));
 
 // Creación de las cards de turnos en la página Turnos
 let divTurnos = document.getElementById ("divTurnos");
+
 turnosContac.forEach (arrayDeTurnos => {
     divTurnos.innerHTML += ` 
         <div class="card" id="producto${arrayDeTurnos.id}" style="width: 18rem;">
@@ -27,7 +27,7 @@ turnosContac.forEach (arrayDeTurnos => {
                 <img src="/img/IconoContactologiaO.png" alt="Logo Contactologia">
                 <h5 class="card-title">${arrayDeTurnos.fecha}</h5>
                 <p class="card-text">${arrayDeTurnos.horario}</p>
-                <button class= "botonReserva">Reservar este turno</button> 
+                <button class= "botonReserva" id="${arrayDeTurnos.id}">Reservar este turno</button> 
             </div>
         </div>
         `
@@ -36,14 +36,18 @@ turnosContac.forEach (arrayDeTurnos => {
 // Respuesta a la reserva de turno
 let botones = document.getElementsByClassName ("botonReserva");
 for (boton of botones) {
-boton.addEventListener(`click`, ( ) => {
-    Swal.fire({
-        title:'Excelente!',
-        text: "Su turno fue confirmado",
-        icon: 'success',
-        confirmButtonText: 'OK',
-        timer: 3000
-      })   
-})
-};
+    boton.addEventListener(`click`, (e) => {
+        const id = parseInt(e.target.id);
+        const turno = turnosContac.find(turno => turno.id == id);
+        Swal.fire({
+            title:'Excelente!',
+            text: `Su turno para el día ${turno.fecha} a las ${turno.horario} fue confirmado`,
+            icon: 'success',
+            confirmButtonText: 'OK',
+            timer: 4000
+          })
+       
+    })
+    };
 
+    
