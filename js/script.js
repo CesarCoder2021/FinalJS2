@@ -33,7 +33,7 @@ turnosContac.forEach (arrayDeTurnos => {
         `
 })
 
-// Respuesta a la reserva de turno
+// Respuesta a la reserva de turno (con fecha y hora)
 let botones = document.getElementsByClassName ("botonReserva");
 for (boton of botones) {
     boton.addEventListener(`click`, (e) => {
@@ -45,9 +45,7 @@ for (boton of botones) {
             icon: 'success',
             confirmButtonText: 'OK',
             timer: 4000
-          })
-       
+        })     
     })
     };
 
-    
