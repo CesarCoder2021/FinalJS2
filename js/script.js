@@ -44,7 +44,10 @@ for (boton of botones) {
             icon: 'success',
             confirmButtonText: 'OK',
             timer: 4000
-        })     
+        })
+        const index = turnosContac.findIndex (turno => turno.id == id);
+        turnosContac.splice (index,1);
+        console.log (turnosContac);
     })
-    };
+};
 
