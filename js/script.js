@@ -19,6 +19,7 @@ let turnosContac = [turnoDisponible1, turnoDisponible2, turnoDisponible3, turnoD
 // Creación de las cards de turnos en la página Turnos
 let divTurnos = document.getElementById ("divTurnos");
 
+function turnoActualizado () {
 turnosContac.forEach (arrayDeTurnos => {
     divTurnos.innerHTML += ` 
         <div class="card" id="producto${arrayDeTurnos.id}" style="width: 18rem;">
@@ -31,6 +32,8 @@ turnosContac.forEach (arrayDeTurnos => {
         </div>
         `
 })
+}
+turnoActualizado();
 
 // Respuesta a la reserva de turno (con fecha y hora)
 let botones = document.getElementsByClassName ("botonReserva");
@@ -45,9 +48,16 @@ for (boton of botones) {
             confirmButtonText: 'OK',
             timer: 4000
         })
+        // Elimino el turno reservado del array
         const index = turnosContac.findIndex (turno => turno.id == id);
         turnosContac.splice (index,1);
-        console.log (turnosContac);
+        console.log (turnosContac);  
+        document.getElementById ("divTurnos").innerHTML = " ";
+        turnoActualizado ();
     })
 };
+
+
+
+
 
