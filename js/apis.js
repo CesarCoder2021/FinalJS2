@@ -3,7 +3,7 @@ const noticias = document.querySelector ("#noticias");
 // Llamada a la API de NewsData
 const sumarPost = async () => {
     const resp = await
-fetch ("http://api.mediastack.com/v1/news?access_key=b43b6966e94071f82b3d2acdde071467&keywords=salud+visual&languages=es");
+fetch ("http://api.mediastack.com/v1/news?access_key=b43b6966e94071f82b3d2acdde071467&keywords=salud+visual&languages=es&countries=ar");
 
 const data = await resp.json()
 // Creación de las cards con los contenidos del array de las noticias
